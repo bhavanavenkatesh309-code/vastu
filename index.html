@@ -190,7 +190,328 @@ padding:30px;
 footer p{
 margin:8px;
 }
+/* ==========================================
+   BOOK APPOINTMENT POPUP
+========================================== */
 
+.modal{
+    display:none;
+    position:fixed;
+    z-index:9999;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    justify-content:center;
+    align-items:center;
+}
+
+.modal-content{
+    background:#ffffff;
+    width:90%;
+    max-width:500px;
+    border-radius:15px;
+    padding:30px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.25);
+    animation:popup 0.3s ease;
+    position:relative;
+}
+
+@keyframes popup{
+    from{
+        transform:scale(0.8);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+.modal-content h2{
+    text-align:center;
+    color:#1c7c54;
+    margin-bottom:25px;
+    font-size:30px;
+    font-weight:bold;
+}
+
+.close{
+    position:absolute;
+    top:15px;
+    right:20px;
+    font-size:30px;
+    cursor:pointer;
+    color:#777;
+}
+
+.close:hover{
+    color:red;
+}
+
+.modal-content input,
+.modal-content select,
+.modal-content textarea{
+
+    width:100%;
+    padding:14px;
+    margin:12px 0;
+    border:1px solid #ccc;
+    border-radius:10px;
+    font-size:16px;
+    outline:none;
+    transition:0.3s;
+    box-sizing:border-box;
+}
+
+.modal-content input:focus,
+.modal-content select:focus,
+.modal-content textarea:focus{
+
+    border-color:#1c7c54;
+    box-shadow:0 0 6px rgba(28,124,84,0.4);
+}
+
+.modal-content textarea{
+    resize:none;
+}
+
+.submit-btn{
+
+    width:100%;
+    background:#1c7c54;
+    color:white;
+    border:none;
+    padding:15px;
+    font-size:17px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
+    margin-top:10px;
+}
+
+.submit-btn:hover{
+
+    background:#14563b;
+}
+
+.book-btn{
+
+    background:#1c7c54;
+    color:white;
+    border:none;
+    padding:15px 35px;
+    border-radius:10px;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.book-btn:hover{
+
+    background:#14563b;
+}
+
+/* Fix hero section spacing */
+
+.hero{
+
+    padding-top:130px;
+}
+
+/* Mobile Responsive */
+
+@media(max-width:768px){
+
+    .modal-content{
+
+        width:95%;
+        padding:20px;
+    }
+
+    .modal-content h2{
+
+        font-size:24px;
+    }
+
+    .submit-btn{
+
+        font-size:16px;
+    }
+
+    .book-btn{
+
+        width:100%;
+    }
+
+}
+  /* ==========================================
+   MOBILE RESPONSIVE DESIGN
+========================================== */
+
+@media screen and (max-width: 992px){
+
+    .container{
+        width:95%;
+    }
+
+    .hero{
+        padding:120px 20px 70px;
+        text-align:center;
+    }
+
+    .hero h1{
+        font-size:42px;
+        line-height:1.3;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .book-btn{
+        padding:14px 30px;
+        font-size:18px;
+    }
+
+}
+
+/* Mobile */
+
+@media screen and (max-width:768px){
+
+    header{
+        padding:15px 20px;
+    }
+
+    .logo{
+        font-size:24px;
+    }
+
+    nav ul{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav{
+        width:100%;
+        text-align:center;
+    }
+
+    .hero{
+        padding:140px 20px 60px;
+    }
+
+    .hero h1{
+        font-size:34px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .book-btn{
+        width:100%;
+        padding:15px;
+        font-size:18px;
+    }
+
+    .services{
+
+        display:grid;
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    .service-card{
+
+        width:100%;
+    }
+
+    .about{
+
+        display:flex;
+        flex-direction:column;
+    }
+
+    .about img{
+
+        width:100%;
+        margin-bottom:20px;
+    }
+
+    .contact{
+
+        display:flex;
+        flex-direction:column;
+    }
+
+    .contact-info,
+    .contact-form{
+
+        width:100%;
+    }
+
+    footer{
+
+        text-align:center;
+        padding:20px;
+    }
+
+}
+
+
+/* Small Mobile */
+
+@media screen and (max-width:480px){
+
+    .hero{
+
+        padding:150px 15px 50px;
+    }
+
+    .hero h1{
+
+        font-size:28px;
+    }
+
+    .hero p{
+
+        font-size:15px;
+    }
+
+    .book-btn{
+
+        font-size:16px;
+    }
+
+    .modal-content{
+
+        width:95%;
+        padding:20px;
+    }
+
+    .modal-content h2{
+
+        font-size:24px;
+    }
+
+    .modal-content input,
+    .modal-content select,
+    .modal-content textarea{
+
+        font-size:15px;
+        padding:12px;
+    }
+
+    .submit-btn{
+
+        font-size:16px;
+        padding:14px;
+    }
+
+}
 </style>
 
 </head>
@@ -226,11 +547,9 @@ Create harmony, happiness and success through authentic Vastu guidance.
 
 <div class="buttons">
 
-<a href="#" class="btn primary">Book Consultation</a>
-
-<a href="#" class="btn secondary">Learn More</a>
-
-</div>
+<button class="btn primary" onclick="openModal()">
+    Book Consultation
+</button>
 
 </div>
 
@@ -317,8 +636,10 @@ Create harmony, happiness and success through authentic Vastu guidance.
 Book your Vastu consultation today and create a harmonious environment.
 
 </p>
-
-<a href="#" class="btn primary">Book Appointment</a>
+  
+<button class="book-btn" onclick="openModal()">
+    Book Consultation
+</button>
 
 </section>
 
@@ -333,6 +654,159 @@ Book your Vastu consultation today and create a harmonious environment.
 <p>© 2026 Deeva Vastu experts. All Rights Reserved.</p>
 
 </footer>
+<!-- BOOK APPOINTMENT POPUP -->
 
+<div id="appointmentModal" class="modal">
+
+  <div class="modal-content">
+
+    <span class="close" onclick="closeModal()">&times;</span>
+
+    <h2>Book Appointment</h2>
+
+    <form id="appointmentForm">
+
+      <input
+        type="text"
+        id="name"
+        placeholder="Your Name"
+        required
+      >
+
+      <input
+        type="tel"
+        id="phone"
+        placeholder="WhatsApp Number"
+        required
+      >
+
+      <input
+        type="email"
+        id="email"
+        placeholder="Email ID (Optional)"
+      >
+
+      <select id="service" required>
+
+        <option value="">Select Service</option>
+
+        <option>Home Vastu</option>
+
+        <option>Office Vastu</option>
+
+        <option>Commercial Vastu</option>
+
+        <option>Factory Vastu</option>
+
+        <option>Online Consultation</option>
+
+      </select>
+
+      <textarea
+        id="message"
+        rows="5"
+        placeholder="Your Message (Optional)"
+      ></textarea>
+
+      <button type="submit" class="submit-btn">
+        Submit & Continue on WhatsApp
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
+  ...
+<!-- Appointment Popup -->
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+
+    // Paste the JavaScript here
+
+</script>
+
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+    // Initialize EmailJS
+    emailjs.init({
+        publicKey: "YOUR_PUBLIC_KEY"
+    });
+
+    // Open the popup
+    function openModal() {
+        document.getElementById("appointmentModal").style.display = "flex";
+    }
+
+    // Close the popup
+    function closeModal() {
+        document.getElementById("appointmentModal").style.display = "none";
+    }
+
+    // Close popup when clicking outside
+    window.onclick = function(event) {
+        const modal = document.getElementById("appointmentModal");
+
+        if (event.target == modal) {
+            closeModal();
+        }
+    };
+
+    // Submit the booking form
+    document.getElementById("appointmentForm").addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const params = {
+            name: document.getElementById("name").value,
+            phone: document.getElementById("phone").value,
+            email: document.getElementById("email").value,
+            service: document.getElementById("service").value,
+            message: document.getElementById("message").value,
+            to_email: "info@deevavastuexperts.com"
+        };
+
+        emailjs.send(
+            "YOUR_SERVICE_ID",
+            "YOUR_TEMPLATE_ID",
+            params
+        )
+        .then(function(response) {
+
+            alert("Your appointment has been booked successfully!");
+
+            document.getElementById("appointmentForm").reset();
+
+            closeModal();
+
+            // Optional: Open WhatsApp
+            window.open(
+                "https://wa.me/919739389696" +
+                encodeURIComponent(
+                    "Hello, I have booked a Vastu consultation.\n\n" +
+                    "Name: " + params.name +
+                    "\nPhone: " + params.phone +
+                    "\nEmail: " + params.email +
+                    "\nService: " + params.service +
+                    "\nMessage: " + params.message
+                ),
+                "_blank"
+            );
+
+        })
+        .catch(function(error) {
+
+            alert("Failed to send booking. Please try again.");
+
+            console.error(error);
+
+        });
+
+    });
+</script>
 </body>
 </html> 

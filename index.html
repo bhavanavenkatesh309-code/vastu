@@ -784,18 +784,18 @@ Book your Vastu consultation today and create a harmonious environment.
             closeModal();
 
             // Optional: Open WhatsApp
-            window.open(
-                "https://wa.me/919739389696" +
-                encodeURIComponent(
-                    "Hello, I have booked a Vastu consultation.\n\n" +
-                    "Name: " + params.name +
-                    "\nPhone: " + params.phone +
-                    "\nEmail: " + params.email +
-                    "\nService: " + params.service +
-                    "\nMessage: " + params.message
-                ),
-                "_blank"
-            );
+           window.open(
+    "https://wa.me/919739389696?text=" +
+    encodeURIComponent(
+        "Hello, I have booked a Vastu consultation.\n\n" +
+        "Name: " + params.name +
+        "\nPhone: " + params.phone +
+        "\nEmail: " + params.email +
+        "\nService: " + params.service +
+        "\nMessage: " + params.message
+    ),
+    "_blank"
+);
 
         })
         .catch(function(error) {

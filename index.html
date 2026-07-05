@@ -730,32 +730,41 @@ Book your Vastu consultation today and create a harmonious environment.
 </body>
 </html>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
 <script>
-    // Initialize EmailJS
-   emailjs.init("CxoJURKeDMI0nC2qz");
+/* =========================
+   EMAILJS INIT
+========================= */
+emailjs.init("CxoJURKeDMI0nC2qz");
 
-    // Open the popup
-    function openModal() {
-        document.getElementById("appointmentModal").style.display = "flex";
+
+/* =========================
+   MODAL FUNCTIONS
+========================= */
+window.openModal = function () {
+    document.getElementById("appointmentModal").style.display = "flex";
+}
+
+window.closeModal = function () {
+    document.getElementById("appointmentModal").style.display = "none";
+}
+
+
+/* Close modal when clicking outside */
+document.addEventListener("click", function (event) {
+    const modal = document.getElementById("appointmentModal");
+    if (event.target === modal) {
+        closeModal();
     }
+});
 
-    // Close the popup
-    function closeModal() {
-        document.getElementById("appointmentModal").style.display = "none";
-    }
 
-    // Close popup when clicking outside
-  window.addEventListener("click", function(event) {
-        const modal = document.getElementById("appointmentModal");
+/* =========================
+   FORM SUBMIT
+========================= */
+document.addEventListener("DOMContentLoaded", function () {
 
-        if (event.target == modal) {
-            closeModal();
-        }
-    };
-
-    // Submit the booking form
-    document.getElementById("appointmentForm").addEventListener("submit", function(event) {
-
+    document.getElementById("appointmentForm").addEventListener("submit", function (event) {
         event.preventDefault();
 
         const params = {
@@ -763,8 +772,7 @@ Book your Vastu consultation today and create a harmonious environment.
             phone: document.getElementById("phone").value,
             email: document.getElementById("email").value,
             service: document.getElementById("service").value,
-            message: document.getElementById("message").value,
-            to_email: "info@deevavastuexperts.com"
+            message: document.getElementById("message").value
         };
 
         emailjs.send(
@@ -772,40 +780,36 @@ Book your Vastu consultation today and create a harmonious environment.
             "template_a61hovu",
             params
         )
-      .then(function(response) {
+        .then(function () {
 
-    alert("Your appointment has been booked successfully!");
+            alert("Your appointment has been booked successfully!");
 
-    document.getElementById("appointmentForm").reset();
+            document.getElementById("appointmentForm").reset();
+            closeModal();
 
-    closeModal();
+            /* =========================
+               WHATSAPP MESSAGE
+            ========================= */
+            const message =
+                "Hello, I have booked a Vastu consultation.\n\n" +
+                "Name: " + params.name +
+                "\nPhone: " + params.phone +
+                "\nEmail: " + params.email +
+                "\nService: " + params.service +
+                "\nMessage: " + params.message;
 
-    // WhatsApp message
-    const message =
-        "Hello, I have booked a Vastu consultation.\n\n" +
-        "Name: " + params.name +
-        "\nPhone: " + params.phone +
-        "\nEmail: " + params.email +
-        "\nService: " + params.service +
-        "\nMessage: " + params.message;
+            const url =
+                "https://wa.me/919739389696?text=" + encodeURIComponent(message);
 
-    const url =
-        "https://wa.me/919739389696?text=" + encodeURIComponent(message);
-
-    window.open(url, "_blank");
-
-})
+            window.open(url, "_blank");
 
         })
-        .catch(function(error) {
-
+        .catch(function (error) {
+            console.error("EmailJS Error:", error);
             alert("Failed to send booking. Please try again.");
-
-            console.error(error);
-
         });
 
     });
+
+});
 </script>
-</body>
-</html> 

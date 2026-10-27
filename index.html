@@ -32,10 +32,21 @@ position:sticky;
 top:0;
 }
 
-.logo{
-font-size:28px;
-font-weight:bold;
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 26px;
+  font-weight: bold;
 }
+
+.logo img {
+  width: 65px;
+  height: 55px;
+  object-fit: contain;
+}
+
 
 nav a{
 color:white;
@@ -519,7 +530,11 @@ margin:8px;
 
 <header>
 
-<div class="logo">🏡 Deeva Vastu experts</div>
+<div class="logo">
+  <img src="logo.png" alt="Deeva Vastu Experts">
+  <span>Deeva Vastu Experts</span>
+</div>
+
 
 <nav>
 
